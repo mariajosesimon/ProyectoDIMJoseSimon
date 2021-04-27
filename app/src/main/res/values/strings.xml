@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">ProyectoDIMJoseSimon</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="usuario">usuario</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="login">LOGIN</string>
+    <string name="reset">RESET</string>
+    <string name="carniceria">Carniceria</string>
+    <string name="pescaderia">Pescaderia</string>
+    <string name="panaderia">Panaderia</string>
+    <string name="bolleria">Bolleria</string>
+    <string name="fruteria">Fruteria</string>
+    <string name="hogar">Hogar</string>
+    <string name="otros">Otros</string>
+    <string name="mas">Mas</string>
+    <string name="producto">producto</string>
+    <string name="cantidad">cantidad</string>
+    <string name="floating">floating</string>
+    <string name="F3_producto">PRODUCTO</string>
+    <string name="F3_cantidad">CANTIDAD</string>
+    <string name="kg">Kg</string>
+    <string name="gr">Gr</string>
+    <string name="paquetes">Paquetes</string>
+    <string name="a_adir_a_mi_compra">AÑADIR A MI COMPRA</string>
+    <string name="modificar_el_producto">MODIFICAR EL PRODUCTO</string>
+    <string name="eliminar_de_mi_compra">ELIMINAR DE MI COMPRA</string>
+</resources>

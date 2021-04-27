@@ -1,0 +1,43 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.proyectodimjosesimon.MainActivity">
+    <item
+        android:id="@+id/desplegar"
+        android:icon="@drawable/puntos"
+        android:title="@string/mas"
+        app:showAsAction="always">
+
+
+        <menu>
+            <item
+                android:id="@+id/Carniceria"
+                android:icon="@drawable/carniceria"
+                android:title="@string/carniceria" />
+            <item
+                android:id="@+id/Pescaderia"
+                android:icon="@drawable/pescaderia"
+                android:title="@string/pescaderia" />
+            <item
+                android:id="@+id/Panaderia"
+                android:icon="@drawable/panaderia"
+                android:title="@string/panaderia" />
+            <item
+                android:id="@+id/Bolleria"
+                android:icon="@drawable/bolleria"
+                android:title="@string/bolleria" />
+            <item
+                android:id="@+id/Fruteria"
+                android:icon="@drawable/fruteria"
+                android:title="@string/fruteria" />
+            <item
+                android:id="@+id/Hogar"
+                android:icon="@drawable/hogar"
+                android:title="@string/hogar" />
+            <item
+                android:id="@+id/Otros"
+                android:icon="@drawable/otros"
+                android:title="@string/otros" />
+        </menu>
+    </item>
+</menu>
