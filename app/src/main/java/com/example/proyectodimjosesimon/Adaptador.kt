@@ -3,6 +3,7 @@ package com.example.proyectodimjosesimon
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RadioButton
 import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
@@ -16,13 +17,14 @@ class Adaptador(var listaCompra: List<Producto>, val actividad: MainActivity) :
 
         var txtnombre: TextView
         var txtCantidad: TextView
+        var txtUnidad: TextView
 
         var posicion: Int =0
 
         init {
             txtnombre = v.findViewById(R.id.idProducto)
             txtCantidad = v.findViewById(R.id.idCantidad)
-
+            txtUnidad = v.findViewById(R.id.idUnidad)
             posicion = 0
             v.setOnClickListener {
 
@@ -43,6 +45,7 @@ class Adaptador(var listaCompra: List<Producto>, val actividad: MainActivity) :
         holder.posicion = listaCompra[position].id
         holder.txtnombre.text = listaCompra[position].nombre
         holder.txtCantidad.text = listaCompra[position].cantidad.toString()
+        holder.txtUnidad.text = listaCompra[position].tipoUnidad
 
 
 

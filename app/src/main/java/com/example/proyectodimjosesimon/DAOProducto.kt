@@ -11,8 +11,6 @@ interface DAOProducto {
     @Query("select * from tabla_productos where id like :id")
     fun BuscarPorId(id: Int): Flow<Producto>
 
-
-
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun Insertar(prod: Producto)
 

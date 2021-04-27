@@ -7,14 +7,24 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 
-class ThirdFragment: Fragment() {
+class ThirdFragment : Fragment() {
+
+    lateinit var kg: RadioButton;
+    lateinit var g: RadioButton;
+    lateinit var paquete: RadioButton;
+
+    lateinit var unidad: String;
+
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_third, container, false)
@@ -34,6 +44,14 @@ class ThirdFragment: Fragment() {
 
         val nombre = view.findViewById<EditText>(R.id.etProducto)
         val cantidad = view.findViewById<EditText>(R.id.etCantidad)
+
+        kg = view.findViewById<RadioButton>(R.id.rbKg)
+        g = view.findViewById<RadioButton>(R.id.rbG)
+        paquete = view.findViewById<RadioButton>(R.id.rbPaquetes)
+
+        val seleccion = view.findViewById<RadioGroup>(R.id.RGMedida).getTag()
+
+        unidad = unidadSeleccionada()
 
         val id = arguments?.getInt("id") ?: -1
 
@@ -60,35 +78,60 @@ class ThirdFragment: Fragment() {
 
 
 
-            view.findViewById<Button>(R.id.bInsertar).setOnClickListener {
+        view.findViewById<Button>(R.id.bInsertar).setOnClickListener {
+            unidad = unidadSeleccionada()
 
-                (activity as MainActivity).miVM.Insertar(
-                        Producto(
-                                nombre = nombre.text.toString(),
-                                cantidad = cantidad.text.toString().toInt()
-                        ))
+            (activity as MainActivity).miVM.Insertar(
+                Producto(
+                    nombre = nombre.text.toString(),
+                    cantidad = cantidad.text.toString().toInt(),
+                    tipoUnidad = unidad
+                )
+            )
 
-                findNavController().navigate(R.id.action_ThirdFragment_to_SecondFragment)
-            }
+            findNavController().navigate(R.id.action_ThirdFragment_to_SecondFragment)
+        }
 
-            view.findViewById<Button>(R.id.bModificar).setOnClickListener {
+        view.findViewById<Button>(R.id.bModificar).setOnClickListener {
+            unidad = unidadSeleccionada()
+            (activity as MainActivity).miVM.Actualizar(
+                Producto(
+                    id,
+                    nombre.text.toString(),
+                    cantidad.text.toString().toInt(),
+                    tipoUnidad = unidad
+                )
+            )
 
-                (activity as MainActivity).miVM.Actualizar(
-                        Producto(id,
-                                nombre.text.toString(),
-                                cantidad.text.toString().toInt()
-                        ))
+            println("unidad" + unidad.toString())
 
-                findNavController().navigate(R.id.action_ThirdFragment_to_SecondFragment)
-            }
+            findNavController().navigate(R.id.action_ThirdFragment_to_SecondFragment)
+        }
 
-            view.findViewById<Button>(R.id.bEliminar).setOnClickListener {
-                (activity as MainActivity).miVM.Borrar(
-                        Producto(id,
-                                nombre.text.toString(),
-                                 cantidad.text.toString().toInt()
-                        ))
-                findNavController().navigate(R.id.action_ThirdFragment_to_SecondFragment)
-            }
+        view.findViewById<Button>(R.id.bEliminar).setOnClickListener {
+            unidad = unidadSeleccionada()
+            (activity as MainActivity).miVM.Borrar(
+                Producto(
+                    id,
+                    nombre.text.toString(),
+                    cantidad.text.toString().toInt(),
+                    tipoUnidad = unidad
+
+                )
+            )
+            findNavController().navigate(R.id.action_ThirdFragment_to_SecondFragment)
         }
     }
+
+    fun unidadSeleccionada(): String {
+        var id: String = ""
+        if (kg.isChecked) {
+             id= "Kg"
+        } else if (g.isChecked) {
+            id=  "Gr"
+        } else if (paquete.isChecked) {
+            id= "Pack"
+        }
+        return id
+    }
+}

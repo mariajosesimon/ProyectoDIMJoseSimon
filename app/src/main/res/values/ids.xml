@@ -2,4 +2,5 @@
 <resources>
     <item name="txtProducto" type="id" />
     <item name="txtCantidad" type="id" />
+
 </resources>

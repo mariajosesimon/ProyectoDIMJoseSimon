@@ -10,6 +10,7 @@ data class Producto(
         @PrimaryKey(autoGenerate = true) var id: Int = 0,
         @NotNull @ColumnInfo(name = "nombre") var nombre: String = "",
         @ColumnInfo(name = "cantidad") var cantidad: Int,
+        @ColumnInfo(name = "tipounidad") var tipoUnidad: String = ""
 
 
 
