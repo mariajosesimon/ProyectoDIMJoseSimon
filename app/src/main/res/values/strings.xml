@@ -33,4 +33,6 @@
     <string name="modificar_el_producto">MODIFICAR EL PRODUCTO</string>
     <string name="eliminar_de_mi_compra">ELIMINAR DE MI COMPRA</string>
     <string name="unidad">unidad</string>
+    <string name="Categoria">Categoria</string>
+    <string name="categoria">CATEGORIA</string>
 </resources>

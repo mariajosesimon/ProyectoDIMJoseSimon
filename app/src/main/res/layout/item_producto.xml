@@ -9,12 +9,11 @@
 
     <TextView
         android:id="@+id/idProducto"
-        android:layout_width="140dp"
+        android:layout_width="100dp"
         android:layout_height="40dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:text="@string/producto"
-
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,7 +21,7 @@
 
     <TextView
         android:id="@+id/idCantidad"
-        android:layout_width="70dp"
+        android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="160dp"
         android:layout_marginTop="20dp"
@@ -34,13 +33,35 @@
         />
     <TextView
         android:id="@+id/idUnidad"
-        android:layout_width="70dp"
+        android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="250dp"
         android:layout_marginTop="20dp"
         android:text="@string/unidad"
 
         android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+    <TextView
+        android:id="@+id/idCategoria"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="290dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/unidad"
+        android:visibility="invisible"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/idImagen"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="350dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         />

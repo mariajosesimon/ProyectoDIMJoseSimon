@@ -25,6 +25,10 @@ class ProductoVM(private val miRepositorio: Repositorio) : ViewModel() {
         miRepositorio.Actualizar(unProducto)
     }
 
+    fun BuscarPorCat(categoria: Int) = viewModelScope.launch {
+        unProducto = miRepositorio.BuscarPorCat(categoria).asLiveData()
+    }
+
 
 }
 class ProductoViewModelFactory(private val repository: Repositorio): ViewModelProvider.Factory{

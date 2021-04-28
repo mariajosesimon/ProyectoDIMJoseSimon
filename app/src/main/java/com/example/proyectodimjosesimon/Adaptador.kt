@@ -1,8 +1,10 @@
 package com.example.proyectodimjosesimon
 
+import android.support.v7.widget.CardView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.RadioButton
 import android.widget.TextView
 import androidx.core.os.bundleOf
@@ -18,6 +20,8 @@ class Adaptador(var listaCompra: List<Producto>, val actividad: MainActivity) :
         var txtnombre: TextView
         var txtCantidad: TextView
         var txtUnidad: TextView
+        var txtCategoria: TextView
+        var imCategoria: ImageView
 
         var posicion: Int =0
 
@@ -25,6 +29,8 @@ class Adaptador(var listaCompra: List<Producto>, val actividad: MainActivity) :
             txtnombre = v.findViewById(R.id.idProducto)
             txtCantidad = v.findViewById(R.id.idCantidad)
             txtUnidad = v.findViewById(R.id.idUnidad)
+            txtCategoria = v.findViewById(R.id.idCategoria)
+            imCategoria=v.findViewById(R.id.idImagen)
             posicion = 0
             v.setOnClickListener {
 
@@ -46,7 +52,8 @@ class Adaptador(var listaCompra: List<Producto>, val actividad: MainActivity) :
         holder.txtnombre.text = listaCompra[position].nombre
         holder.txtCantidad.text = listaCompra[position].cantidad.toString()
         holder.txtUnidad.text = listaCompra[position].tipoUnidad
-
+        holder.txtCategoria.text= listaCompra[position].categoria.toString()
+        holder.imCategoria.setImageResource(listaCompra[position].imagen)
 
 
     }

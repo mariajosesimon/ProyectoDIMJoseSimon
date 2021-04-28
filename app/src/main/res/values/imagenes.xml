@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="imagenesCategorias"> Categorias:
+        <item>Bolleria</item>
+        <item>Carniceria</item>
+        <item>Fruteria</item>
+        <item>Hogar</item>
+        <item>Panaderia</item>
+        <item>Pescaderia</item>
+        <item>Otros</item>
+    </string-array>
+
+</resources>

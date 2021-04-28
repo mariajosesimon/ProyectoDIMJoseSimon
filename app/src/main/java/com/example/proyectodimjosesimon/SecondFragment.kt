@@ -30,6 +30,10 @@ class SecondFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val rootView = inflater.inflate(R.layout.fragment_second, container, false)
+       // toolbar = view?.findViewById<Toolbar>(R.id.toolbar)!!
+
+     //   toolbar.inflateMenu(R.menu.menu_main)
+
         var misProductos: List<Producto> = listOf()
         (activity as MainActivity).miVM.listaCompra.observe(activity as MainActivity) { Producto ->
             Producto?.let {
@@ -65,10 +69,10 @@ class SecondFragment : Fragment() {
         // as you specify a parent activity in AndroidManifest.xml.
         when (item.itemId) {
             R.id.Carniceria -> {
-                Toast.makeText(activity as MainActivity, "has pulsado datos", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity as MainActivity, "has pulsado carniceria", Toast.LENGTH_SHORT).show()
             }
             R.id.Pescaderia -> {
-                Toast.makeText(activity as MainActivity, "has pulsado comprar", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity as MainActivity, "has pulsado pescaderia", Toast.LENGTH_SHORT).show()
             }
             R.id.Bolleria -> {
                 Toast.makeText(activity as MainActivity, "has pulsado informacion", Toast.LENGTH_SHORT).show()

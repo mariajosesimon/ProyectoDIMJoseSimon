@@ -29,5 +29,9 @@ class Repositorio(val miDAO: DAOProducto) {
         miDAO.Actualizar(peli)
     }
 
+    fun BuscarPorCat(categoria: Int): Flow<Producto> {
+        return miDAO.BuscarPorCat(categoria)
+    }
+
 
 }
