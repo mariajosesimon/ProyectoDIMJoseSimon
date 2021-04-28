@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".ResetFragment">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/txtUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/usuario"
+        android:layout_marginTop="50dp"
+        android:textAlignment="center"
+        />
+    <EditText
+        android:id="@+id/etxtResetUsr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:id="@+id/txtResetPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Contraseña"
+        android:layout_marginTop="40dp"
+        android:textAlignment="center"
+        />
+
+
+    <EditText
+        android:id="@+id/etxtPss"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        />
+
+    <Button
+        android:id="@+id/bGuardar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Guardar"
+        android:layout_marginTop="40dp"
+        android:textAlignment="center"
+        />
+
+
+</LinearLayout>

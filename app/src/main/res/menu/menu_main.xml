@@ -4,40 +4,52 @@
     tools:context="com.example.proyectodimjosesimon.MainActivity">
     <item
         android:id="@+id/desplegar"
-        android:icon="@drawable/puntos"
+        android:icon="@drawable/ic_baseline_more_vert_24"
         android:title="@string/mas"
-        app:showAsAction="always">
+        app:showAsAction="ifRoom"
+    >
 
 
         <menu>
             <item
+                android:id="@+id/Todos"
+                android:title="@string/Todos"
+                app:showAsAction="never"/>
+            <item
                 android:id="@+id/Carniceria"
                 android:icon="@drawable/carniceria"
-                android:title="@string/carniceria" />
+                android:title="@string/Car"
+                app:showAsAction="never"/>
             <item
                 android:id="@+id/Pescaderia"
                 android:icon="@drawable/pescaderia"
-                android:title="@string/pescaderia" />
+                android:title="@string/Pes"
+                app:showAsAction="never"/>
             <item
                 android:id="@+id/Panaderia"
                 android:icon="@drawable/panaderia"
-                android:title="@string/panaderia" />
+                android:title="@string/Pan"
+                app:showAsAction="never"/>
             <item
-                android:id="@+id/Bolleria"
+                android:id="@+id/Bolleri"
                 android:icon="@drawable/bolleria"
-                android:title="@string/bolleria" />
+                android:title="@string/Boll"
+                app:showAsAction="never"/>
             <item
                 android:id="@+id/Fruteria"
                 android:icon="@drawable/fruteria"
-                android:title="@string/fruteria" />
+                android:title="@string/Fru"
+                app:showAsAction="never"/>
             <item
                 android:id="@+id/Hogar"
                 android:icon="@drawable/hogar"
-                android:title="@string/hogar" />
+                android:title="@string/hog"
+                app:showAsAction="never"/>
             <item
-                android:id="@+id/Otros"
+                android:id="@+id/Otro"
                 android:icon="@drawable/otros"
-                android:title="@string/otros" />
+                android:title="@string/otr"
+                app:showAsAction="never"/>
         </menu>
     </item>
 </menu>

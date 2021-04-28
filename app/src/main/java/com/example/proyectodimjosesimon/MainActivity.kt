@@ -40,8 +40,6 @@ class MainActivity : AppCompatActivity() {
         val usuarios: SharedPreferences = getSharedPreferences("usuarios", Context.MODE_PRIVATE)
         user = usuarios.getString("user", user).toString()
         pass = usuarios.getString("pass", pass).toString()
-
-
     }
 
 
@@ -50,12 +48,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
+        setTitle("A la compra!")
 
-        /*findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
-            Snackbar.make(view, "Nuevo producto", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }*/
     }
+
 
 
 

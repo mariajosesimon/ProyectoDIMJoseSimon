@@ -14,6 +14,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_resetFragment"
+            app:destination="@id/resetFragment" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -33,5 +36,14 @@
     <action
         android:id="@+id/action_ThirdFragment_to_SecondFragment"
         app:destination="@id/SecondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resetFragment"
+        android:name="com.example.proyectodimjosesimon.ResetFragment"
+        android:label="fragment_reset2"
+        tools:layout="@layout/fragment_reset" >
+        <action
+            android:id="@+id/action_resetFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
     </fragment>
 </navigation>

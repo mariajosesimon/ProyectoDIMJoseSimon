@@ -30,11 +30,11 @@ class SecondFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val rootView = inflater.inflate(R.layout.fragment_second, container, false)
-       // toolbar = view?.findViewById<Toolbar>(R.id.toolbar)!!
 
-     //   toolbar.inflateMenu(R.menu.menu_main)
 
+        //carga la lista completa.
         var misProductos: List<Producto> = listOf()
+       // (activity as MainActivity).miVM.BuscarPorCat(1)
         (activity as MainActivity).miVM.listaCompra.observe(activity as MainActivity) { Producto ->
             Producto?.let {
                 miRecyclerView = rootView.findViewById<RecyclerView>(R.id.tarjetitas)
@@ -44,13 +44,16 @@ class SecondFragment : Fragment() {
             }
 
         }
+
         rootView.findViewById<FloatingActionButton>(R.id.FloatingAdd).setOnClickListener() {
             findNavController().navigate(R.id.action_SecondFragment_to_ThirdFragment)
         }
+
         activity?.setTitle("Lista de la compra")
 
-      //  (activity as AppCompatActivity).setSupportActionBar(toolbar)
         setHasOptionsMenu(true)
+
+
 
 
         return rootView
@@ -67,27 +70,41 @@ class SecondFragment : Fragment() {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
+        (activity as MainActivity).miVM.BuscarPorCat(item.itemId)
+
         when (item.itemId) {
             R.id.Carniceria -> {
                 Toast.makeText(activity as MainActivity, "has pulsado carniceria", Toast.LENGTH_SHORT).show()
+
             }
             R.id.Pescaderia -> {
                 Toast.makeText(activity as MainActivity, "has pulsado pescaderia", Toast.LENGTH_SHORT).show()
+
             }
-            R.id.Bolleria -> {
-                Toast.makeText(activity as MainActivity, "has pulsado informacion", Toast.LENGTH_SHORT).show()
+            R.id.Bolleri -> {
+                Toast.makeText(activity as MainActivity, "has pulsado Bolleria", Toast.LENGTH_SHORT).show()
             }
             R.id.Fruteria -> {
-                Toast.makeText(activity as MainActivity, "has pulsado informacion", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity as MainActivity, "has pulsado Fruteria", Toast.LENGTH_SHORT).show()
             }
             R.id.Hogar -> {
-                Toast.makeText(activity as MainActivity, "has pulsado informacion", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity as MainActivity, "has pulsado Hogar", Toast.LENGTH_SHORT).show()
             }
-            R.id.Otros -> {
-                Toast.makeText(activity as MainActivity, "has pulsado informacion", Toast.LENGTH_SHORT).show()
+            R.id.Otro -> {
+                Toast.makeText(activity as MainActivity, "has pulsado Otros", Toast.LENGTH_SHORT).show()
+            }
+            R.id.Todos->{
+                Toast.makeText(activity as MainActivity, "has pulsado todos", Toast.LENGTH_SHORT).show()
+                var id = item.itemId.toInt()
+                println(id)
             }
 
         }
         return true
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        (activity as MainActivity).menuInflater.inflate(R.menu.menu_main, menu)
+
     }
 }

@@ -25,8 +25,6 @@ class FirstFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_first, container, false)
     }
 
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -79,10 +77,10 @@ class FirstFragment : Fragment() {
 
         }
 
-        /* ******************************AQUI FALTA LLAMAR AL RESET FRAGMENT*****************************
+
         view.findViewById<Button>(R.id.bReset).setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_ResetFragment)
-        }*/
+            findNavController().navigate(R.id.action_FirstFragment_to_resetFragment)
+        }
 
     }
 }

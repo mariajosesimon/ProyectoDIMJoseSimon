@@ -1,49 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="500dp"
+    android:layout_marginStart="100dp"
+    android:layout_height="40dp"
+    android:layout_marginBottom="2dp"
+    android:background="@drawable/bordes_redondos">
 
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/vistaTarjeta"
-        android:layout_width="350dp"
-        android:layout_height="120dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginEnd="40dp"
-        android:layout_marginTop="25dp">
+    <TextView
+        android:id="@+id/idProducto"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/producto"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
 
-        <ImageView
+    <TextView
+        android:id="@+id/idCantidad"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="190dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/cantidad"
 
-            android:id="@+id/imagen"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="40dp" />
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+    <TextView
+        android:id="@+id/idUnidad"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/unidad"
 
-        <TextView
-            android:id="@+id/idProducto"
-            android:layout_width="140dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="110dp"
-            android:layout_marginTop="40dp"
-            android:hint="@string/producto"
-            android:textAlignment="center" />
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+    <TextView
+        android:id="@+id/idCategoria"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/unidad"
+        android:visibility="invisible"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
 
-        <TextView
-            android:id="@+id/idCantidad"
-            android:layout_width="70dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="260dp"
-            android:layout_marginTop="40dp"
-            android:hint="@string/cantidad"
-            android:textAlignment="center"
+    <ImageView
+        android:id="@+id/idImagen"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="425dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
 
-            />
-
-
-    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
