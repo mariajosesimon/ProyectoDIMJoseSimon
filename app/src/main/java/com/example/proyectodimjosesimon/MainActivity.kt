@@ -17,9 +17,9 @@ import androidx.navigation.fragment.findNavController
 
 class MainActivity : AppCompatActivity() {
     lateinit var toolbar: Toolbar
-    val database by lazy{BaseDatos.getDatabase(this)}
+    val database by lazy { BaseDatos.getDatabase(this) }
     val repositorio by lazy { Repositorio(database.miDAO()) }
-    val miVM: ProductoVM by viewModels(){
+    val miVM: ProductoVM by viewModels() {
         ProductoViewModelFactory(repositorio)
     }
 
@@ -51,10 +51,6 @@ class MainActivity : AppCompatActivity() {
         setTitle("A la compra!")
 
     }
-
-
-
-
 
 
 }
