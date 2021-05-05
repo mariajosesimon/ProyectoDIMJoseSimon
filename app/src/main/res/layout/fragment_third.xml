@@ -43,7 +43,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="30dp"
                 android:textAlignment="center"
-                android:textSize="14sp"
+                android:textSize="15sp"
                 android:textStyle="bold"
                 app:layout_constraintTop_toBottomOf="@+id/txtProducto" />
 
@@ -60,6 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="30dp"
+                android:gravity="center"
                 android:background="@drawable/bordes_redondos"
                 android:text="@string/F3_cantidad"
                 android:textAlignment="center"
@@ -106,6 +107,7 @@
                 android:layout_marginTop="10dp"
                 android:entries="@array/imagenesCategorias"
                 android:prompt="@string/Categoria"
+                android:textSize="15sp"
                 app:layout_constraintTop_toBottomOf="@+id/txtCategoria" />
 
             <ImageView
@@ -120,7 +122,7 @@
 
     <LinearLayout
         android:id="@id/Cat"
-        android:layout_width="300dp"
+        android:layout_width="333dp"
         android:layout_height="65dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="15dp"
@@ -160,7 +162,7 @@
 
             <RadioButton
                 android:id="@+id/rbPaquetes"
-                android:layout_width="100dp"
+                android:layout_width="127dp"
                 android:layout_height="50dp"
                 android:tag="3"
                 android:text="@string/paquetes"

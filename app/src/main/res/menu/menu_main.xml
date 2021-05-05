@@ -10,8 +10,6 @@
         android:layout_alignParentLeft="true"
         app:showAsAction="ifRoom"
     >
-
-
         <menu>
             <item
                 android:id="@+id/Todos"

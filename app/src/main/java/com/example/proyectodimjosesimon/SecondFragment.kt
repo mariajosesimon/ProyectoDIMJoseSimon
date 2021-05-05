@@ -46,6 +46,8 @@ class SecondFragment : Fragment() {
 
 
 
+
+
         rootView.findViewById<FloatingActionButton>(R.id.FloatingAdd).setOnClickListener() {
             findNavController().navigate(R.id.action_SecondFragment_to_ThirdFragment)
         }
@@ -72,56 +74,72 @@ class SecondFragment : Fragment() {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        var numero: Int = 0
-        (activity as MainActivity).miVM.BuscarPorCat(numero)
+        var numero: Int = -1
+
 
         when (item.itemId) {
 
             R.id.Bolleria -> {
-                Toast.makeText(activity as MainActivity, "has pulsado Bolleria", Toast.LENGTH_SHORT)
+                Toast.makeText(activity as MainActivity, "Has seleccionado: Bolleria", Toast.LENGTH_SHORT)
                     .show()
                 numero = 0
             }
             R.id.Carniceria -> {
                 Toast.makeText(
                     activity as MainActivity,
-                    "has pulsado carniceria",
+                    "Has seleccionado: Carniceria",
                     Toast.LENGTH_SHORT
                 ).show()
                 numero = 1
             }
             R.id.Fruteria -> {
-                Toast.makeText(activity as MainActivity, "has pulsado Fruteria", Toast.LENGTH_SHORT)
+                Toast.makeText(activity as MainActivity, "Has seleccionado: Fruteria", Toast.LENGTH_SHORT)
                     .show()
                 numero = 2
             }
             R.id.Hogar -> {
-                Toast.makeText(activity as MainActivity, "has pulsado Hogar", Toast.LENGTH_SHORT)
+                Toast.makeText(activity as MainActivity, "Has seleccionado: Hogar", Toast.LENGTH_SHORT)
+                    .show()
+                numero = 3
+            }
+            R.id.Panaderia -> {
+                Toast.makeText(activity as MainActivity, "Has seleccionado: Panaderia", Toast.LENGTH_SHORT)
                     .show()
                 numero = 4
+
             }
             R.id.Pescaderia -> {
                 Toast.makeText(
                     activity as MainActivity,
-                    "has pulsado pescaderia",
+                    "Has seleccionado: Pescaderia",
                     Toast.LENGTH_SHORT
                 ).show()
                 numero = 5
             }
             R.id.Otros -> {
-                Toast.makeText(activity as MainActivity, "has pulsado Otros", Toast.LENGTH_SHORT)
+                Toast.makeText(activity as MainActivity, "Has seleccionado: Otros", Toast.LENGTH_SHORT)
                     .show()
                 numero = 6
             }
+
+
             R.id.Todos -> {
-                Toast.makeText(activity as MainActivity, "has pulsado todos", Toast.LENGTH_SHORT)
+                Toast.makeText(activity as MainActivity, "Has seleccionado: Todos", Toast.LENGTH_SHORT)
                     .show()
                 numero = 7
-                println("todos" + item.title)
+
             }
 
         }
-        return true
+
+        if (numero >-1 && numero <7 ) {
+            Toast.makeText(activity as MainActivity, "hola hola", Toast.LENGTH_SHORT)
+                .show()
+            (activity as MainActivity).miVM.BuscarPorCat(numero)
+        }else{
+            (activity as MainActivity).miVM.MostrarTodas()
+        }
+        return  true
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

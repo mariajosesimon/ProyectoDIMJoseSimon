@@ -24,5 +24,5 @@ interface DAOProducto {
     suspend fun BorrarTodo()
 
     @Query("select * from tabla_productos where categoria like :categoria")
-    fun BuscarPorCat(categoria: Int): Flow<Producto>
+    fun BuscarPorCat(categoria: Int): Flow<List<Producto>>
 }

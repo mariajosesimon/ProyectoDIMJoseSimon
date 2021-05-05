@@ -5,7 +5,7 @@ import kotlinx.coroutines.launch
 
 class ProductoVM(private val miRepositorio: Repositorio) : ViewModel() {
 
-    val listaCompra: LiveData<List<Producto>> = miRepositorio.listaProductos.asLiveData() // para ver el listado observable
+    var listaCompra: LiveData<List<Producto>> = miRepositorio.listaProductos.asLiveData() // para ver el listado observable
     lateinit var unProducto: LiveData<Producto> //cuando necesito ver un dato recuperado. observable
 
 
@@ -14,6 +14,10 @@ class ProductoVM(private val miRepositorio: Repositorio) : ViewModel() {
     //viewModelScope --> se necesita lanzar desde una corrutina
     fun BuscarPorId(id: Int) = viewModelScope.launch {
         unProducto = miRepositorio.BuscarPorId(id).asLiveData()
+    }
+
+    fun MostrarTodas() = viewModelScope.launch {
+        listaCompra = miRepositorio.listaProductos.asLiveData()
     }
 
 
@@ -26,7 +30,7 @@ class ProductoVM(private val miRepositorio: Repositorio) : ViewModel() {
     }
 
     fun BuscarPorCat(categoria: Int) = viewModelScope.launch {
-        unProducto = miRepositorio.BuscarPorCat(categoria).asLiveData()
+        listaCompra = miRepositorio.BuscarPorCat(categoria).asLiveData()
     }
 
 

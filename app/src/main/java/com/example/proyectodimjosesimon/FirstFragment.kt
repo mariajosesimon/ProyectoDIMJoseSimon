@@ -23,19 +23,13 @@ class FirstFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_first, container, false)
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         view.findViewById<Button>(R.id.bLogin).setOnClickListener {
-            //Aqui hay que chequear si es correcto o no,
-            // revisar el xml o json a ver si aparecen los datos.
-            //si es correcto hay que mandar el navegador
-            // si es incorrecto hay que sacar un mensaje de "mal contraseña o usuario"
-
-
-            //Almaceno en un string los datos de usuario y contraseña del primer fragmento.
 
             var usuario: String = ""
             var contrasena: String = ""

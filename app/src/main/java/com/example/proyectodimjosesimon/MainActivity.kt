@@ -13,6 +13,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.widget.Toolbar
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 
 class MainActivity : AppCompatActivity() {
@@ -49,7 +50,12 @@ class MainActivity : AppCompatActivity() {
         toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
         setTitle("A la compra!")
+        this.supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return super.onSupportNavigateUp() || findNavController(R.id.nav_host_fragment).navigateUp()
     }
 
 

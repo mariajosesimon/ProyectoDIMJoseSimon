@@ -16,6 +16,10 @@ class Repositorio(val miDAO: DAOProducto) {
         return miDAO.BuscarPorId(id)
     }
 
+    fun MostrarTodas(): Flow<List<Producto>> {
+        return miDAO.MostrarTodas()
+    }
+
 
     @Suppress("RedudantSuspendModifier")
     @WorkerThread
@@ -29,7 +33,7 @@ class Repositorio(val miDAO: DAOProducto) {
         miDAO.Actualizar(peli)
     }
 
-    fun BuscarPorCat(categoria: Int): Flow<Producto> {
+    fun BuscarPorCat(categoria: Int): Flow<List<Producto>> {
         return miDAO.BuscarPorCat(categoria)
     }
 
