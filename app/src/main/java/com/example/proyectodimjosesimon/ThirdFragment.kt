@@ -1,23 +1,23 @@
 package com.example.proyectodimjosesimon
 
 import android.annotation.SuppressLint
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.get
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import kotlin.properties.Delegates
 
 class ThirdFragment : Fragment() {
 
     lateinit var kg: RadioButton;
     lateinit var gr: RadioButton;
     lateinit var paquete: RadioButton;
+
 
     val listaCategoriasImagenes = listOf<Int>(
         R.drawable.bolleria,
@@ -32,18 +32,38 @@ class ThirdFragment : Fragment() {
     lateinit var unidad: String;
     var categoriaEscogida = 1
 
+    //@SuppressLint("ResourceType")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
 
-        return inflater.inflate(R.layout.fragment_third, container, false)
+       return inflater.inflate(R.layout.fragment_third, container, false)
+
     }
+
+
+
 
     @SuppressLint("CutPasteId")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val orientation = this.resources.configuration.orientation
+        if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+            Toast.makeText(activity as MainActivity, "estar en portrait", Toast.LENGTH_SHORT)
+                .show()
+         //   (activity as MainActivity).supportFragmentManager.beginTransaction().replace(R.id.tres_vertical,ThirdFragment()).commit()
+
+
+
+        } else {
+            Toast.makeText(activity as MainActivity, "estar en landscape", Toast.LENGTH_SHORT)
+                .show()
+       //     (activity as MainActivity).supportFragmentManager.beginTransaction().replace(R.id.tres_horizontal,ThirdFragment()).commit()
+
+        }
 
         (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
         setHasOptionsMenu(true)
@@ -192,4 +212,9 @@ class ThirdFragment : Fragment() {
         return id
     }
 
+
+
 }
+
+
+

@@ -21,7 +21,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
  */
 class SecondFragment : Fragment() {
     lateinit var miRecyclerView: RecyclerView
-
+    lateinit var adaptador: Adaptador
     lateinit var toolbar: Toolbar
 
     override fun onCreateView(
@@ -31,22 +31,21 @@ class SecondFragment : Fragment() {
         // Inflate the layout for this fragment
         val rootView = inflater.inflate(R.layout.fragment_second, container, false)
 
-
         //carga la lista completa.
         var misProductos: List<Producto> = listOf()
-        // (activity as MainActivity).miVM.BuscarPorCat(1)
+
         (activity as MainActivity).miVM.listaCompra.observe(activity as MainActivity) { Producto ->
             Producto?.let {
                 miRecyclerView = rootView.findViewById<RecyclerView>(R.id.tarjetitas)
                 miRecyclerView.layoutManager = LinearLayoutManager(activity)
-                miRecyclerView.adapter = Adaptador(it, activity as MainActivity)
+
+                adaptador=Adaptador(it, activity as MainActivity)
+                miRecyclerView.adapter=adaptador
+
+                adaptador.notifyDataSetChanged()
+
             }
         }
-
-
-
-
-
 
         rootView.findViewById<FloatingActionButton>(R.id.FloatingAdd).setOnClickListener() {
             findNavController().navigate(R.id.action_SecondFragment_to_ThirdFragment)
@@ -55,9 +54,6 @@ class SecondFragment : Fragment() {
         activity?.setTitle("Lista de la compra")
 
         setHasOptionsMenu(true)
-
-
-
 
         return rootView
     }
@@ -80,7 +76,11 @@ class SecondFragment : Fragment() {
         when (item.itemId) {
 
             R.id.Bolleria -> {
-                Toast.makeText(activity as MainActivity, "Has seleccionado: Bolleria", Toast.LENGTH_SHORT)
+                Toast.makeText(
+                    activity as MainActivity,
+                    "Has seleccionado: Bolleria",
+                    Toast.LENGTH_SHORT
+                )
                     .show()
                 numero = 0
             }
@@ -93,17 +93,29 @@ class SecondFragment : Fragment() {
                 numero = 1
             }
             R.id.Fruteria -> {
-                Toast.makeText(activity as MainActivity, "Has seleccionado: Fruteria", Toast.LENGTH_SHORT)
+                Toast.makeText(
+                    activity as MainActivity,
+                    "Has seleccionado: Fruteria",
+                    Toast.LENGTH_SHORT
+                )
                     .show()
                 numero = 2
             }
             R.id.Hogar -> {
-                Toast.makeText(activity as MainActivity, "Has seleccionado: Hogar", Toast.LENGTH_SHORT)
+                Toast.makeText(
+                    activity as MainActivity,
+                    "Has seleccionado: Hogar",
+                    Toast.LENGTH_SHORT
+                )
                     .show()
                 numero = 3
             }
             R.id.Panaderia -> {
-                Toast.makeText(activity as MainActivity, "Has seleccionado: Panaderia", Toast.LENGTH_SHORT)
+                Toast.makeText(
+                    activity as MainActivity,
+                    "Has seleccionado: Panaderia",
+                    Toast.LENGTH_SHORT
+                )
                     .show()
                 numero = 4
 
@@ -117,29 +129,39 @@ class SecondFragment : Fragment() {
                 numero = 5
             }
             R.id.Otros -> {
-                Toast.makeText(activity as MainActivity, "Has seleccionado: Otros", Toast.LENGTH_SHORT)
+                Toast.makeText(
+                    activity as MainActivity,
+                    "Has seleccionado: Otros",
+                    Toast.LENGTH_SHORT
+                )
                     .show()
                 numero = 6
             }
 
-
             R.id.Todos -> {
-                Toast.makeText(activity as MainActivity, "Has seleccionado: Todos", Toast.LENGTH_SHORT)
+                Toast.makeText(
+                    activity as MainActivity,
+                    "Has seleccionado: Todos",
+                    Toast.LENGTH_SHORT
+                )
                     .show()
                 numero = 7
 
             }
-
         }
 
-        if (numero >-1 && numero <7 ) {
+        if (numero > -1 && numero < 7) {
             Toast.makeText(activity as MainActivity, "hola hola", Toast.LENGTH_SHORT)
                 .show()
             (activity as MainActivity).miVM.BuscarPorCat(numero)
-        }else{
+            adaptador.notifyDataSetChanged()
+
+
+        } else {
             (activity as MainActivity).miVM.MostrarTodas()
+            adaptador.notifyDataSetChanged()
         }
-        return  true
+        return true
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
